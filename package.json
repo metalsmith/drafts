@@ -1,0 +1,13 @@
+{
+  "name": "metalsmith-drafts",
+  "description": "A metalsmith plugin to hide drafts.",
+  "repository": "git://github.com/segmentio/metalsmith-drafts.git",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "devDependencies": {
+    "mocha": "1.x",
+    "metalsmith": "0.0.0",
+    "assert-dir-equal": "0.0.1"
+  }
+}
