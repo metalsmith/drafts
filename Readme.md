@@ -19,15 +19,19 @@
 }
 ```
 
+  Then in your files YAML front-matter add `draft: true`.
+
 ## Javascript Usage
 
-  Pass the plugin to `Metalsmith#use`:
+  Pass the plugin to `Metalsmith#use`, like so:
 
 ```js
 var drafts = require('metalsmith-drafts');
 
 metalsmith.use(drafts());
 ```
+
+  Then in your files YAML front-matter add `draft: true`.
 
 ## License
 
