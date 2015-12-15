@@ -12,7 +12,7 @@ describe('metalsmith-drafts', function(){
         })
   });
 
-  it('should remove drafts from output (default behavior)', function(done){
+  it('should remove drafts from output (default behavior / ensure backwards-compatibility)', function(done){
     Metalsmith('test/fixture/default')
       .use(drafts())
       .build(function(err){

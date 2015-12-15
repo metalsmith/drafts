@@ -19,7 +19,18 @@
 }
 ```
 
-  Then in your files YAML front-matter add `draft: true`.
+Then in your files YAML front-matter add `draft: true`.
+In case you want to force all files to be set to `draft: true`, use the following plugin-option:
+
+```json
+{
+  "plugins": {
+    "metalsmith-drafts": {
+		"defaults": true
+	}
+  }
+}
+```
 
 ## Javascript Usage
 
@@ -31,7 +42,18 @@ var drafts = require('metalsmith-drafts');
 metalsmith.use(drafts());
 ```
 
-  Then in your files YAML front-matter add `draft: true`.
+Then in your files YAML front-matter add `draft: true`.
+
+### Default value for `draft`
+If you want to define a default value for `draft` (in case they are not definied in the YAML front-matter, then use the plugin option `defaults`:
+
+```js
+var drafts = require('metalsmith-drafts');
+
+metalsmith.use(drafts( {
+	defaults: true
+}));
+```
 
 ## License
 
