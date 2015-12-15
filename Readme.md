@@ -26,7 +26,7 @@ In case you want to force all files to be set to `draft: true`, use the followin
 {
   "plugins": {
     "metalsmith-drafts": {
-		"defaults": true
+		"default": true
 	}
   }
 }
@@ -45,13 +45,13 @@ metalsmith.use(drafts());
 Then in your files YAML front-matter add `draft: true`.
 
 ### Default value for `draft`
-If you want to define a default value for `draft` (in case they are not definied in the YAML front-matter, then use the plugin option `defaults`:
+If you want to define a default value for `draft` (in case they are not definied in the YAML front-matter, then use the plugin option `default`:
 
 ```js
 var drafts = require('metalsmith-drafts');
 
 metalsmith.use(drafts( {
-	defaults: true
+	default: true
 }));
 ```
 
