@@ -4,7 +4,9 @@
 [![code style: prettier][prettier-badge]][prettier-url]
 [![metalsmith: plugin][metalsmith-badge]][metalsmith-url]
 
-  A metalsmith plugin to hide drafts.
+[![Build Status][travis-badge]][travis-url]
+
+A metalsmith plugin to hide drafts.
 
 ## Installation
 
@@ -68,3 +70,6 @@ metalsmith.use(drafts( {
 [prettier-url]: https://github.com/prettier/prettier
 [metalsmith-badge]: https://img.shields.io/badge/metalsmith-plugin-green.svg?longCache=true
 [metalsmith-url]: http://metalsmith.io
+
+[travis-badge]: https://travis-ci.org/segmentio/metalsmith-drafts.svg?branch=master
+[travis-url]: https://travis-ci.org/segmentio/metalsmith-drafts
