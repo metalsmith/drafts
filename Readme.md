@@ -1,5 +1,8 @@
+# Metalsmith Drafts
 
-# metalsmith-drafts
+[![npm version][npm-badge]][npm-url]
+[![code style: prettier][prettier-badge]][prettier-url]
+[![metalsmith: plugin][metalsmith-badge]][metalsmith-url]
 
   A metalsmith plugin to hide drafts.
 
@@ -58,3 +61,10 @@ metalsmith.use(drafts( {
 ## License
 
   MIT
+
+[npm-badge]: https://img.shields.io/npm/v/metalsmith-drafts.svg
+[npm-url]: https://www.npmjs.com/package/metalsmith-drafts
+[prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg
+[prettier-url]: https://github.com/prettier/prettier
+[metalsmith-badge]: https://img.shields.io/badge/metalsmith-plugin-green.svg?longCache=true
+[metalsmith-url]: http://metalsmith.io

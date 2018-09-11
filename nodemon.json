@@ -1,0 +1,5 @@
+{
+  "ignore": ["node_modules"],
+  "ext": "js",
+  "delay": "100ms"
+}
