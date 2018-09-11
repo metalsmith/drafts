@@ -5,9 +5,13 @@
   "version": "0.0.1",
   "license": "MIT",
   "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
   "devDependencies": {
-    "mocha": "1.x",
+    "assert-dir-equal": "0.0.1",
+    "del": "^2.2.0",
     "metalsmith": "0.0.0",
-    "assert-dir-equal": "0.0.1"
+    "mocha": "1.x"
   }
 }
