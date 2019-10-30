@@ -20,4 +20,4 @@ Check for [unreleased][] changes.
 
 [unreleased]: https://github.com/segmentio/metalsmith-drafts/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/segmentio/metalsmith-drafts/compare/v0.1.0...v1.0.0
-[0.1.0]: https://github.com/segmentio/metalsmith-drafts/compare/0.0.1...v0.1.0
+[0.1.0]: https://github.com/segmentio/metalsmith-drafts/compare/v0.0.1...v0.1.0
