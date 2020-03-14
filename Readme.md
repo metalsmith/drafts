@@ -60,6 +60,8 @@ metalsmith.use(drafts( {
 }));
 ```
 
+> Note: if you're templates don't have `draft: true` your site might disapear when on your first compile! 
+
 ## License
 
   MIT
