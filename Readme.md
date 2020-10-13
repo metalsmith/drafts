@@ -10,16 +10,16 @@ A metalsmith plugin to hide drafts.
 
 ## Installation
 
-    $ npm install metalsmith-drafts
+    $ npm install @metalsmith/drafts
 
 ## CLI Usage
 
-  Install via npm and then add the `metalsmith-drafts` key to your `metalsmith.json` plugins, like so:
+  Install via npm and then add the `@metalsmith/drafts` key to your `metalsmith.json` plugins, like so:
 
 ```json
 {
   "plugins": {
-    "metalsmith-drafts": true
+    "@metalsmith/drafts": true
   }
 }
 ```
@@ -30,7 +30,7 @@ In case you want to force all files to be set to `draft: true`, use the followin
 ```json
 {
   "plugins": {
-    "metalsmith-drafts": {
+    "@metalsmith/drafts": {
 		"default": true
 	}
   }
@@ -42,7 +42,7 @@ In case you want to force all files to be set to `draft: true`, use the followin
   Pass the plugin to `Metalsmith#use`, like so:
 
 ```js
-var drafts = require('metalsmith-drafts');
+var drafts = require('@metalsmith/drafts');
 
 metalsmith.use(drafts());
 ```
@@ -53,7 +53,7 @@ Then in your files YAML front-matter add `draft: true`.
 If you want to define a default value for `draft` (in case they are not definied in the YAML front-matter, then use the plugin option `default`:
 
 ```js
-var drafts = require('metalsmith-drafts');
+var drafts = require('@metalsmith/drafts');
 
 metalsmith.use(drafts( {
 	default: true

@@ -1,7 +1,21 @@
 {
-  "name": "metalsmith-drafts",
+  "name": "@metalsmith/drafts",
   "description": "A metalsmith plugin to hide drafts.",
-  "repository": "git://github.com/segmentio/metalsmith-drafts.git",
+  "keywords": [
+    "drafts",
+    "metalsmith",
+    "metalsmith-plugin",
+    "static-site"
+  ],
+  "homepage": "https://github.com/metalsmith/drafts#readme",
+  "bugs": {
+    "url": "https://github.com/metalsmith/drafts/issues"
+  },
+  "author": "Ian Storm Taylor (https://ianstormtaylor.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metalsmith/drafts.git"
+  },
   "version": "1.0.0",
   "license": "MIT",
   "main": "lib/index.js",
@@ -23,5 +37,11 @@
     "mocha": "^6.2.2",
     "nodemon": "^1.19.4",
     "prettier": "^1.18.2"
+  },
+  "files": [
+    "lib/*.js"
+  ],
+  "engines": {
+    "node": ">=8"
   }
 }
