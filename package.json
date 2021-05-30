@@ -21,7 +21,7 @@
   "main": "lib/index.js",
   "scripts": {
     "pretest": "npm run lint",
-    "test": "mocha --reporter spec",
+    "test": "mocha",
     "lint": "eslint --cache --fix .",
     "dev": "nodemon --exec 'npm test'",
     "preversion": "npm test",
@@ -29,14 +29,14 @@
   },
   "devDependencies": {
     "assert-dir-equal": "^1.1.0",
-    "del": "^5.1.0",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.5.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "del": "^6.0.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "metalsmith": "^2.3.0",
-    "mocha": "^6.2.2",
-    "nodemon": "^1.19.4",
-    "prettier": "^1.18.2"
+    "mocha": "^8.4.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.0"
   },
   "files": [
     "lib/*.js"
