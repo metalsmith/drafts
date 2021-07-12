@@ -1,16 +1,18 @@
-# Metalsmith Drafts
+# @metalsmith/drafts
 
 [![npm version][npm-badge]][npm-url]
 [![code style: prettier][prettier-badge]][prettier-url]
 [![metalsmith: plugin][metalsmith-badge]][metalsmith-url]
 
-[![Build Status][travis-badge]][travis-url]
+[![build][ga-badge]][ga-url]
 
 A metalsmith plugin to hide drafts.
 
 ## Installation
 
-    $ npm install @metalsmith/drafts
+```bash
+npm install @metalsmith/drafts
+```
 
 ## CLI Usage
 
@@ -31,8 +33,8 @@ In case you want to force all files to be set to `draft: true`, use the followin
 {
   "plugins": {
     "@metalsmith/drafts": {
-		"default": true
-	}
+      "default": true
+    }
   }
 }
 ```
@@ -55,7 +57,7 @@ If you want to define a default value for `draft` (in case they are not definied
 ```js
 var drafts = require('@metalsmith/drafts');
 
-metalsmith.use(drafts( {
+metalsmith.use(drafts({
 	default: true
 }));
 ```
@@ -71,5 +73,5 @@ metalsmith.use(drafts( {
 [metalsmith-badge]: https://img.shields.io/badge/metalsmith-plugin-green.svg?longCache=true
 [metalsmith-url]: http://metalsmith.io
 
-[travis-badge]: https://travis-ci.org/segmentio/metalsmith-drafts.svg?branch=master
-[travis-url]: https://travis-ci.org/segmentio/metalsmith-drafts
+[ga-badge]: https://github.com/metalsmith/drafts/actions/workflows/test.yml/badge.svg
+[ga-url]: https://github.com/metalsmith/drafts/actions/workflows/test.yml
