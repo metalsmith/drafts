@@ -66,8 +66,8 @@ metalsmith.use(drafts({
 
   MIT
 
-[npm-badge]: https://img.shields.io/npm/v/metalsmith-drafts.svg
-[npm-url]: https://www.npmjs.com/package/metalsmith-drafts
+[npm-badge]: https://img.shields.io/npm/v/@metalsmith/drafts.svg
+[npm-url]: https://www.npmjs.com/package/@metalsmith/drafts
 [prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg
 [prettier-url]: https://github.com/prettier/prettier
 [metalsmith-badge]: https://img.shields.io/badge/metalsmith-plugin-green.svg?longCache=true

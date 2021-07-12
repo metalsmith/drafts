@@ -2,6 +2,13 @@
 
 Check for [unreleased][] changes.
 
+## [1.1.0][] - 2021-07-13
+
+- Finalize move to @metalsmith/drafts
+- Dropped support for Node < 10
+- Added limited JSDoc support
+- Added LICENSE file
+
 ## [1.0.0][] - 2019-10-30
 
 # Previous
@@ -18,6 +25,7 @@ Check for [unreleased][] changes.
 
 ---
 
-[unreleased]: https://github.com/segmentio/metalsmith-drafts/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/segmentio/metalsmith-drafts/compare/v0.1.0...v1.0.0
-[0.1.0]: https://github.com/segmentio/metalsmith-drafts/compare/v0.0.1...v0.1.0
+[unreleased]: https://github.com/metalsmith/drafts/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/metalsmith/drafts/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/metalsmith/drafts/compare/v0.1.0...v1.0.0
+[0.1.0]: https://github.com/metalsmith/drafts/compare/v0.0.1...v0.1.0

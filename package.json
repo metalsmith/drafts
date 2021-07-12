@@ -12,6 +12,10 @@
     "url": "https://github.com/metalsmith/drafts/issues"
   },
   "author": "Ian Storm Taylor (https://ianstormtaylor.com)",
+  "contributors": [
+    "Andrew Goodricke",
+    "Kevin Van Lierde (https://webketje.com)"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/metalsmith/drafts.git"
@@ -25,7 +29,7 @@
     "lint": "eslint --cache --fix .",
     "dev": "nodemon --exec 'npm test'",
     "preversion": "npm test",
-    "postversion": "git push && git push --tags && npm publish"
+    "postversion": "git push && git push --tags && npm publish --scope @metalsmith"
   },
   "devDependencies": {
     "assert-dir-equal": "^1.1.0",
@@ -45,6 +49,6 @@
     "lib/*.js"
   ],
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   }
 }
