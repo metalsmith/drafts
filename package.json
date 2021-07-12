@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/metalsmith/drafts.git"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
