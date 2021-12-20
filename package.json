@@ -1,5 +1,6 @@
 {
   "name": "@metalsmith/drafts",
+  "version": "1.1.0",
   "description": "A metalsmith plugin to hide drafts.",
   "keywords": [
     "drafts",
@@ -11,44 +12,54 @@
   "bugs": {
     "url": "https://github.com/metalsmith/drafts/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metalsmith/drafts.git"
+  },
+  "license": "MIT",
   "author": "Ian Storm Taylor (https://ianstormtaylor.com)",
   "contributors": [
     "Andrew Goodricke",
     "Kevin Van Lierde (https://webketje.com)"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/metalsmith/drafts.git"
-  },
-  "version": "1.1.0",
-  "license": "MIT",
   "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "lib",
+    "CHANGELOG.md"
+  ],
   "scripts": {
-    "pretest": "npm run lint",
-    "test": "mocha",
-    "lint": "eslint --cache --fix .",
-    "dev": "nodemon --exec 'npm test'",
-    "preversion": "npm test",
-    "postversion": "git push && git push --tags && npm publish --scope @metalsmith"
+    "changelog": "auto-changelog -u --starting-date 2021-07-17 --commit-limit false --ignore-commit-pattern '(dev|Release|Merge)'",
+    "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
+    "coveralls": "npm run coverage && cat ./coverage.info | coveralls",
+    "format": "prettier --write \"**/*.{yml,md,js,json}\"",
+    "lint": "eslint --cache --fix-dry-run .",
+    "release": "release-it .",
+    "test": "nyc mocha"
   },
   "devDependencies": {
     "assert-dir-equal": "^1.1.0",
-    "del": "^6.0.0",
-    "eslint": "^7.30.0",
+    "auto-changelog": "^2.3.0",
+    "coveralls": "^3.1.1",
+    "del": "^5.1.0",
+    "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
     "metalsmith": "^2.3.0",
-    "mocha": "^9.0.2",
-    "nodemon": "^2.0.11",
-    "prettier": "^2.3.2"
+    "mocha": "^7.2.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.5.1",
+    "release-it": "^14.11.8"
   },
   "peerDependencies": {
     "metalsmith": "^2.3.0"
   },
-  "files": [
-    "lib/*.js"
-  ],
   "engines": {
-    "node": ">=10"
+    "node": ">=8"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

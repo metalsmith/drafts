@@ -1,57 +1,61 @@
-/* eslint-env mocha */
-const equal = require('assert-dir-equal');
-const Metalsmith = require('metalsmith');
-const drafts = require('..');
-const del = require('del');
+const { describe, it, beforeEach, afterEach } = require('mocha')
+const equal = require('assert-dir-equal')
+const Metalsmith = require('metalsmith')
+const drafts = require('..')
+const del = require('del')
 
 describe('metalsmith-drafts', function () {
   function cleanUp(done) {
     del('test/**/build/').then(function () {
-      done();
-    });
+      done()
+    })
   }
 
   beforeEach(function (done) {
-    cleanUp(done);
-  });
+    cleanUp(done)
+  })
   afterEach(function (done) {
     //cleanUp( done );
-    done();
-  });
+    done()
+  })
 
   it('should remove drafts from output (default behavior / ensure backwards-compatibility)', function (done) {
-    Metalsmith('test/fixture/default')
+    Metalsmith('test/fixtures/default')
       .use(drafts())
       .build(function (err) {
-        if (err) return done(err);
-        equal('test/fixture/default/expected', 'test/fixture/default/build');
-        done();
-      });
-  });
+        if (err) return done(err)
+        equal('test/fixtures/default/expected', 'test/fixtures/default/build')
+        done()
+      })
+  })
+
+  it('should accept numbers & strings as values to ease using env variables', function (done) {
+    Metalsmith('test/fixtures/input-types')
+      .use(drafts())
+      .build(function (err) {
+        if (err) return done(err)
+        equal('test/fixtures/input-types/expected', 'test/fixtures/input-types/build')
+        done()
+      })
+  })
 
   it('should remove drafts from output (defaults=true)', function (done) {
-    Metalsmith('test/fixture/defaults-to-true')
+    Metalsmith('test/fixtures/defaults-to-true')
       .use(drafts({ default: true }))
       .build(function (err) {
-        if (err) return done(err);
-        equal(
-          'test/fixture/defaults-to-true/expected',
-          'test/fixture/defaults-to-true/build'
-        );
-        done();
-      });
-  });
+        if (err) return done(err)
+        equal('test/fixtures/defaults-to-true/expected', 'test/fixtures/defaults-to-true/build')
+        done()
+      })
+  })
 
   it('should remove drafts from output (defaults=false)', function (done) {
-    Metalsmith('test/fixture/defaults-to-false')
+    Metalsmith('test/fixtures/defaults-to-false')
       .use(drafts({ default: false }))
       .build(function (err) {
-        if (err) return done(err);
-        equal(
-          'test/fixture/defaults-to-false/expected',
-          'test/fixture/defaults-to-false/build'
-        );
-        done();
-      });
-  });
-});
+        if (err) return done(err)
+        equal('test/fixtures/defaults-to-false/expected', 'test/fixtures/defaults-to-false/build')
+        done()
+      })
+  })
+})
