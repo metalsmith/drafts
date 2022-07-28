@@ -34,9 +34,10 @@
   "scripts": {
     "changelog": "auto-changelog -u --starting-version v1.1.1 --commit-limit false --ignore-commit-pattern '(dev|ci|chore|Release|Merge)'",
     "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
-    "coveralls": "npm run coverage && cat ./coverage.info | coveralls",
     "format": "prettier --write \"**/*.{yml,md,js,json}\"",
-    "lint": "eslint --cache --fix-dry-run .",
+    "format:check": "prettier --list-different \"**/*.{yml,md,js,json}\"",
+    "lint": "eslint --fix .",
+    "lint:check": "eslint --fix-dry-run .",
     "release": "release-it .",
     "test": "nyc mocha"
   },

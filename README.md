@@ -78,8 +78,8 @@ To use this plugin with the Metalsmith CLI, add `@metalsmith/drafts` to the `plu
 
 [npm-badge]: https://img.shields.io/npm/v/@metalsmith/drafts.svg
 [npm-url]: https://www.npmjs.com/package/@metalsmith/drafts
-[ci-badge]: https://app.travis-ci.com/metalsmith/drafts.svg?branch=master
-[ci-url]: https://app.travis-ci.com/github/metalsmith/drafts
+[ci-badge]: https://github.com/metalsmith/drafts/actions/workflows/test.yml/badge.svg
+[ci-url]: https://github.com/metalsmith/drafts/actions/workflows/test.yml
 [metalsmith-badge]: https://img.shields.io/badge/metalsmith-core_plugin-green.svg?longCache=true
 [metalsmith-url]: http://metalsmith.io
 [codecov-badge]: https://img.shields.io/coveralls/github/metalsmith/drafts
