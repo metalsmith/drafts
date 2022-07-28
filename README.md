@@ -1,6 +1,6 @@
 # @metalsmith/drafts
 
-A metalsmith plugin to hide drafts.
+A metalsmith plugin to hide drafts. Metalsmith will not build a page that is marked as draft.
 
 [![metalsmith: core plugin][metalsmith-badge]][metalsmith-url]
 [![npm: version][npm-badge]][npm-url]
@@ -40,6 +40,17 @@ Add `draft: true` to your files' YAML front-matter to mark them as drafts:
 title: My post
 draft: true
 ---
+```
+
+To build pages that are marked as draft during development, use the metalsmith-if plugin to check the node environment and include the draft page in the build accordingly.
+
+```js
+const when = require('metalsmith-if');
+...
+const isProduction = process.env.NODE_ENV === 'production';
+...
+.use(when(isProduction, drafts()))
+
 ```
 
 ### Default value for `draft`
