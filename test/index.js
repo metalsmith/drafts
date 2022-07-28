@@ -15,6 +15,16 @@ describe('@metalsmith/drafts', function () {
       })
   })
 
+  it('should allow a single (bool) param to include/omit drafts from output', function (done) {
+    Metalsmith('test/fixtures/bool-param')
+      .use(drafts(true))
+      .build(function (err) {
+        if (err) return done(err)
+        equal('test/fixtures/bool-param/expected', 'test/fixtures/bool-param/build')
+        done()
+      })
+  })
+
   it('should accept numbers & strings as values to ease using env variables', function (done) {
     Metalsmith('test/fixtures/input-types')
       .use(drafts())

@@ -29,8 +29,9 @@ Pass the plugin with any options to `Metalsmith.use`.
 ```js
 const drafts = require('@metalsmith/drafts')
 
-metalsmith.use(drafts())
-metalsmith.use(drafts({ default: false })) // same as default
+metalsmith.use(drafts()) // same as { include: false }
+metalsmith.use(drafts(true)) // same as { include: true }
+metalsmith.use(drafts({ default: false, include: false })) // same as default
 ```
 
 Add `draft: true` to your files' YAML front-matter to mark them as drafts:
@@ -42,15 +43,12 @@ draft: true
 ---
 ```
 
-To build pages that are marked as draft during development, use the metalsmith-if plugin to check the node environment and include the draft page in the build accordingly.
+To build pages that are marked as draft during development, you can use the Node environment and include the draft page in the build accordingly.
 
 ```js
-const when = require('metalsmith-if');
-...
-const isProduction = process.env.NODE_ENV === 'production';
-...
-.use(when(isProduction, drafts()))
+const inDevelopment = process.env.NODE_ENV === 'development'
 
+metalsmith.use(drafts(inDevelopment))
 ```
 
 ### Default value for `draft`
