@@ -1,24 +1,10 @@
-const { describe, it, beforeEach, afterEach } = require('mocha')
+/* eslint-env node, mocha */
+
 const equal = require('assert-dir-equal')
 const Metalsmith = require('metalsmith')
 const drafts = require('..')
-const del = require('del')
 
-describe('metalsmith-drafts', function () {
-  function cleanUp(done) {
-    del('test/**/build/').then(function () {
-      done()
-    })
-  }
-
-  beforeEach(function (done) {
-    cleanUp(done)
-  })
-  afterEach(function (done) {
-    //cleanUp( done );
-    done()
-  })
-
+describe('@metalsmith/drafts', function () {
   it('should remove drafts from output (default behavior / ensure backwards-compatibility)', function (done) {
     Metalsmith('test/fixtures/default')
       .use(drafts())
