@@ -47,4 +47,4 @@ function configureDrafts(options = defaultOptions) {
   }
 }
 
-module.exports = configureDrafts
+export default configureDrafts

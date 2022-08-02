@@ -27,7 +27,7 @@ yarn add @metalsmith/drafts
 Pass the plugin with any options to `Metalsmith.use`.
 
 ```js
-const drafts = require('@metalsmith/drafts')
+import drafts from '@metalsmith/drafts'
 
 metalsmith.use(drafts()) // same as { include: false }
 metalsmith.use(drafts(true)) // same as { include: true }
@@ -56,7 +56,7 @@ metalsmith.use(drafts(inDevelopment))
 You can instruct `@metalsmith/drafts` to mark files as `draft` by default if they don't have a `draft` property in their front-matter:
 
 ```js
-const drafts = require('@metalsmith/drafts')
+import drafts from '@metalsmith/drafts'
 
 metalsmith.use(
   drafts({

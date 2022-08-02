@@ -19,10 +19,24 @@
   "license": "MIT",
   "author": "Ian Storm Taylor (https://ianstormtaylor.com)",
   "contributors": [
+    "Kevin Van Lierde (https://webketje.com)",
+    "Werner Glinka",
     "Andrew Goodricke",
+    "Stefan Walther",
+    "Ian Storm Taylor",
+    "Bret Fisher"
+  ],
+  "maintainers": [
     "Kevin Van Lierde (https://webketje.com)"
   ],
-  "main": "lib/index.js",
+  "source": "src/index.js",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "type": "module",
+  "exports": {
+    "import": "./lib/index.js",
+    "require": "./lib/index.cjs"
+  },
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -39,15 +53,20 @@
     "lint": "eslint --fix .",
     "lint:check": "eslint --fix-dry-run .",
     "release": "release-it .",
+    "build": "microbundle --target node --no-sourcemap -f cjs,esm --strict",
+    "pretest": "npm run build",
     "test": "nyc mocha"
   },
   "devDependencies": {
     "assert-dir-equal": "^1.1.0",
     "auto-changelog": "^2.4.0",
     "coveralls": "^3.1.1",
-    "eslint": "^8.20.0",
+    "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
     "metalsmith": "^2.3.0",
+    "microbundle": "^0.15.0",
     "mocha": "^9.2.2",
     "nyc": "^15.1.0",
     "prettier": "^2.7.1",
