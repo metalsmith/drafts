@@ -26,8 +26,12 @@ function isDraft(value, fallback) {
 /**
  * Metalsmith plugin to hide drafts from the output.
  *
- * @param {Options} [options]
+ * @param {Options|boolean} [options]
  * @returns {import('metalsmith').Plugin}
+ * @example
+ * metalsmith.use(drafts()) // same as { include: false }
+ * metalsmith.use(drafts(true)) // same as { include: true }
+ * metalsmith.use(drafts({ default: false, include: false })) // same as default
  */
 function configureDrafts(options = defaultOptions) {
   if (typeof options === 'boolean') {
