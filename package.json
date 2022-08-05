@@ -45,6 +45,7 @@
     "lib",
     "CHANGELOG.md"
   ],
+  "types": "lib/types.d.ts",
   "scripts": {
     "changelog": "auto-changelog -u --starting-version v1.1.1 --commit-limit false --ignore-commit-pattern '(dev|ci|chore|Release|Merge)'",
     "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
@@ -53,7 +54,7 @@
     "lint": "eslint --fix .",
     "lint:check": "eslint --fix-dry-run .",
     "release": "release-it .",
-    "build": "microbundle --target node --no-sourcemap -f cjs,esm --strict",
+    "build": "microbundle --target node --no-sourcemap -f cjs,esm --strict --types",
     "pretest": "npm run build",
     "test": "nyc mocha"
   },

@@ -1,7 +1,7 @@
 /**
  * @typedef {Object} Options
- * @property {Boolean} [default=false]
- * @property {Boolean} [include=true]
+ * @property {Boolean} [default=false] Consider files without `draft` key drafts. Defaults to `false`.
+ * @property {Boolean} [include=false] Include drafts in the build output. Defaults to `false`.
  */
 
 const defaultOptions = {
