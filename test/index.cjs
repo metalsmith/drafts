@@ -3,7 +3,7 @@
 const equal = require('assert-dir-equal')
 const Metalsmith = require('metalsmith')
 
-/* eslint-disable-next-line import/no-internal-modules */
+/* eslint-disable-next-line node/no-missing-require */
 const drafts = require('../lib/index.cjs')
 
 describe('@metalsmith/drafts', function () {

@@ -45,7 +45,7 @@
     "lib",
     "CHANGELOG.md"
   ],
-  "types": "lib/types.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "changelog": "auto-changelog -u --starting-version v1.1.1 --commit-limit false --ignore-commit-pattern '(dev|ci|chore|Release|Merge)'",
     "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
