@@ -31,9 +31,9 @@ function isDraft(value, fallback) {
  */
 function configureDrafts(options = defaultOptions) {
   if (typeof options === 'boolean') {
-    options = { ...defaultOptions, include: options }
+    options = Object.assign({}, defaultOptions, { include: options })
   } else {
-    options = { ...defaultOptions, ...options }
+    options = Object.assign({}, defaultOptions, options)
   }
 
   return function drafts(files, metalsmith, done) {

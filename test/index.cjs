@@ -2,7 +2,9 @@
 
 const equal = require('assert-dir-equal')
 const Metalsmith = require('metalsmith')
-const drafts = require('..')
+
+/* eslint-disable-next-line import/no-internal-modules */
+const drafts = require('../lib/index.cjs')
 
 describe('@metalsmith/drafts', function () {
   it('should remove drafts from output (default behavior / ensure backwards-compatibility)', function (done) {
