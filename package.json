@@ -54,7 +54,7 @@
     "lint": "eslint --fix .",
     "lint:check": "eslint --fix-dry-run .",
     "release": "release-it .",
-    "build": "microbundle --target node --no-sourcemap -f cjs,esm --strict --types",
+    "build": "microbundle --target node --no-sourcemap -f cjs,esm --strict --generateTypes=false",
     "pretest": "npm run build",
     "test": "nyc mocha"
   },
