@@ -33,7 +33,7 @@ function isDraft(value, fallback) {
  * metalsmith.use(drafts(true)) // same as { include: true }
  * metalsmith.use(drafts({ default: false, include: false })) // same as default
  */
-function configureDrafts(options = defaultOptions) {
+function drafts(options = defaultOptions) {
   if (typeof options === 'boolean') {
     options = Object.assign({}, defaultOptions, { include: options })
   } else {
@@ -51,4 +51,4 @@ function configureDrafts(options = defaultOptions) {
   }
 }
 
-export default configureDrafts
+export default drafts
