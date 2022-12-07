@@ -41,13 +41,32 @@ function drafts(options = defaultOptions) {
   }
 
   return function drafts(files, metalsmith, done) {
-    setImmediate(done)
-    if (options.include) return
-    Object.keys(files).forEach((path) => {
-      if (isDraft(files[path].draft, options.default)) {
-        delete files[path]
+    const debug = metalsmith.debug('@metalsmith/drafts')
+    debug('Running with options: %o', options)
+
+    if (options.include) {
+      return done()
+    }
+
+    const asDraft = Object.keys(files).filter((path) => isDraft(files[path].draft, options.default))
+
+    debug('Marked %s file(s) as draft', asDraft.length)
+
+    asDraft.forEach((path) => {
+      try {
+        const success = delete files[path]
+        // delete returns false in CJS non-strict mode
+        /* istanbul ignore if */
+        if (success === false) throw new Error()
+        debug.info('Removed draft "%s"', path)
+        // but throws in CJS strict-mode or ESM mode
+      } catch (err) {
+        /* istanbul ignore next */
+        debug.error('Failed to remove draft at "%s"', path)
       }
     })
+
+    done()
   }
 }
 

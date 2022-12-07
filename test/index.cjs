@@ -9,6 +9,7 @@ const drafts = require('../lib/index.cjs')
 describe('@metalsmith/drafts', function () {
   it('should remove drafts from output (default behavior / ensure backwards-compatibility)', function (done) {
     Metalsmith('test/fixtures/default')
+      .env('DEBUG', process.env.DEBUG)
       .use(drafts())
       .build(function (err) {
         if (err) return done(err)
@@ -19,6 +20,7 @@ describe('@metalsmith/drafts', function () {
 
   it('should allow a single (bool) param to include/omit drafts from output', function (done) {
     Metalsmith('test/fixtures/bool-param')
+      .env('DEBUG', process.env.DEBUG)
       .use(drafts(true))
       .build(function (err) {
         if (err) return done(err)
@@ -29,6 +31,7 @@ describe('@metalsmith/drafts', function () {
 
   it('should accept numbers & strings as values to ease using env variables', function (done) {
     Metalsmith('test/fixtures/input-types')
+      .env('DEBUG', process.env.DEBUG)
       .use(drafts())
       .build(function (err) {
         if (err) return done(err)
@@ -39,6 +42,7 @@ describe('@metalsmith/drafts', function () {
 
   it('should remove drafts from output (defaults=true)', function (done) {
     Metalsmith('test/fixtures/defaults-to-true')
+      .env('DEBUG', process.env.DEBUG)
       .use(drafts({ default: true }))
       .build(function (err) {
         if (err) return done(err)
@@ -49,6 +53,7 @@ describe('@metalsmith/drafts', function () {
 
   it('should remove drafts from output (defaults=false)', function (done) {
     Metalsmith('test/fixtures/defaults-to-false')
+      .env('DEBUG', process.env.DEBUG)
       .use(drafts({ default: false }))
       .build(function (err) {
         if (err) return done(err)

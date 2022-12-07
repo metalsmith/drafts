@@ -24,7 +24,7 @@ yarn add @metalsmith/drafts
 
 ## Usage
 
-Pass the plugin with any options to `Metalsmith.use`.
+Pass the plugin with any options to `metalsmith.use`.
 
 ```js
 import drafts from '@metalsmith/drafts'
@@ -64,6 +64,16 @@ metalsmith.use(
   })
 )
 ```
+
+### Debug
+
+To enable debug logs, set the `DEBUG` environment variable to `@metalsmith/drafts*`:
+
+```js
+metalsmith.env('DEBUG', '@metalsmith/drafts*')
+```
+
+Alternatively you can set `DEBUG` to `@metalsmith/*` to debug all Metalsmith core plugins.
 
 ### CLI Usage
 
