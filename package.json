@@ -48,7 +48,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "changelog": "auto-changelog -u --starting-version v1.1.1 --commit-limit false --ignore-commit-pattern '(dev|ci|chore|Release|Merge)'",
-    "coverage": "nyc report --reporter=text-lcov > ./coverage.info",
+    "coverage": "npm test && c8 report --reporter=text-lcov > ./coverage.info",
     "format": "prettier --write \"**/*.{yml,md,js,json}\"",
     "format:check": "prettier --list-different \"**/*.{yml,md,js,json}\"",
     "lint": "eslint --fix .",
@@ -56,11 +56,12 @@
     "release": "release-it .",
     "build": "microbundle --target node --no-sourcemap -f cjs,esm --strict --generateTypes=false",
     "pretest": "npm run build",
-    "test": "nyc mocha"
+    "test": "c8 mocha"
   },
   "devDependencies": {
-    "assert-dir-equal": "^1.1.0",
+    "assert-dir-equal": "github:webketje/assert-dir-equal#v2.0.0",
     "auto-changelog": "^2.4.0",
+    "c8": "^7.14.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -68,7 +69,6 @@
     "metalsmith": "^2.5.1",
     "microbundle": "^0.15.1",
     "mocha": "^9.2.2",
-    "nyc": "^15.1.0",
     "prettier": "^2.8.0",
     "release-it": "^15.5.0"
   },
