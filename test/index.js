@@ -1,10 +1,8 @@
 /* eslint-env node, mocha */
 
-const equal = require('assert-dir-equal')
-const Metalsmith = require('metalsmith')
-
-/* eslint-disable-next-line */
-const drafts = require('../lib/index.cjs')
+import equal from 'assert-dir-equal'
+import Metalsmith from 'metalsmith'
+import drafts from '../src/index.js'
 
 describe('@metalsmith/drafts', function () {
   it('should remove drafts from output (default behavior / ensure backwards-compatibility)', function (done) {

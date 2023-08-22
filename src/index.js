@@ -56,14 +56,14 @@ function drafts(options = defaultOptions) {
       try {
         const success = delete files[path]
         // delete returns false in CJS non-strict mode
-        /* istanbul ignore if */
         if (success === false) throw new Error()
         debug.info('Removed draft "%s"', path)
         // but throws in CJS strict-mode or ESM mode
+        /* c8 ignore start */
       } catch (err) {
-        /* istanbul ignore next */
         debug.error('Failed to remove draft at "%s"', path)
       }
+      /* c8 ignore end */
     })
 
     done()
